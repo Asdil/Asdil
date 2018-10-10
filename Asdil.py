@@ -139,6 +139,5 @@ def help():
     print("函数: unionSet(l1, l2) list取并集")
     print("函数: createDir(path)   创建文件夹")
 
-reWriteTxt('/private/tmp/Asdil/dd', 'ggg', '修改的内容')
 
 
