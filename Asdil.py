@@ -121,6 +121,25 @@ def createDir(path):
     return False
 
 
+# 合并字典
+def combinDic(*args):
+    ret = {}
+    if len(args) == 1:
+        dicts = args[0]
+        assert type(dicts) is list  # 断言是个列表
+        for _dict in dicts:
+            ret = dict(ret, **_dict)
+    else:
+        for _dict in args:
+            assert type(_dict) is dict
+        for _dict in args:
+            ret = dict(ret, **_dict)
+    return ret
+
+
+
+
+
 
 
 
@@ -137,7 +156,5 @@ def help():
     print("函数: interSet(l1, l2) list去交集")
     print("函数: diffSet(l1, l2)  list取差集")
     print("函数: unionSet(l1, l2) list取并集")
-    print("函数: createDir(path)   创建文件夹")
-
-
-
+    print("函数: createDir(path)  创建文件夹")
+    print("函数: combinDic(*args)  合并多个字典合 ([dict, dict]) 或者(dict, dict)")
