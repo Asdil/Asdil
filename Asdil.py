@@ -14,7 +14,7 @@ __author__ = 'Asdil'
 import os
 import shutil
 import subprocess
-
+from multiprocessing import Pool
 
 # 合并两个目录
 def pathJoin(path1, path2):
@@ -73,6 +73,57 @@ def cutFile(srcfile,dstfile):
         print("copy %s -> %s" % (srcfile, dstfile))
 
 
+# 修改Txt文件
+def reWriteTxt(filePath, key, newstr):
+    # 读取
+    content = ""
+    with open(filePath, "r", encoding="utf-8") as f:
+        for line in f:
+            if key in line:
+                line = newstr + '\n'
+            content += line
+    # 写入
+    with open(filePath, "w", encoding="utf-8") as f:
+        f.write(content)
+
+
+# 列表交集
+def interSet(l1, l2):
+    assert type(l1) is list
+    assert type(l2) is list
+    return list(set(l1).intersection(set(l2)))
+
+
+# 列表差集
+def diffSet(l1, l2):
+    assert type(l1) is list
+    assert type(l2) is list
+    return list(set(l1).difference(set(l2)))
+
+
+# 并集
+def unionSet(l1, l2):
+    assert type(l1) is list
+    assert type(l2) is list
+    return list(set(l1).union(set(l2)))
+
+
+# 检查文件夹是否存在，如果存在则删除重新创建
+def createDir(path):
+    """
+    :param path:    文件夹路径
+    :param type:    文件夹不存在是否报错  True报错， False不报错,并创建文件夹
+    :return:
+    """
+    if not os.path.exists(path):
+        os.makedirs(path)
+        return True
+    return False
+
+
+
+
+
 # 帮助文档
 def help():
     print("函数: pathJoin(path1, path2)合并文件")
@@ -82,6 +133,12 @@ def help():
     print("函数: copyFile(srcfile, dstfile)复制文件")
     print("函数: cutFile(srcfile,dstfile)剪切文件")
 
+    print("函数: reWriteTxt(filePath, key, newstr) 修改文件")
+    print("函数: interSet(l1, l2) list去交集")
+    print("函数: diffSet(l1, l2)  list取差集")
+    print("函数: unionSet(l1, l2) list取并集")
+    print("函数: createDir(path)   创建文件夹")
 
+reWriteTxt('/private/tmp/Asdil/dd', 'ggg', '修改的内容')
 
 
