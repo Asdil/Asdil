@@ -7,14 +7,15 @@
    date：          2018/10/9
 -------------------------------------------------
    Change Activity:
-                   2018/10/9:
+                   2018/10/10:
+    version = 0.5
 -------------------------------------------------
 """
 __author__ = 'Asdil'
 import os
 import shutil
 import subprocess
-from multiprocessing import Pool
+
 
 # 合并两个目录
 def pathJoin(path1, path2):
@@ -42,6 +43,7 @@ def subprocessPopen(cmd):
 
 # 拆分目录
 def splitPath(path):
+    assert type(path) is str
     filePath, tmpFileName = os.path.split(path)
     fileName, extension = os.path.splitext(tmpFileName)
     return filePath, fileName, extension, tmpFileName
@@ -120,7 +122,6 @@ def createDir(path):
         return True
     return False
 
-
 # 合并字典
 def combinDic(*args):
     ret = {}
@@ -137,14 +138,8 @@ def combinDic(*args):
     return ret
 
 
-
-
-
-
-
-
 # 帮助文档
-def help():
+def hp():
     print("函数: pathJoin(path1, path2)合并文件")
     print("函数: subprocessPopen(cmd)执行shell命令")
     print("函数: subprocessCall(cmd)执行shell命令获取返回值")
@@ -158,3 +153,5 @@ def help():
     print("函数: unionSet(l1, l2) list取并集")
     print("函数: createDir(path)  创建文件夹")
     print("函数: combinDic(*args)  合并多个字典合 ([dict, dict]) 或者(dict, dict)")
+
+help()
