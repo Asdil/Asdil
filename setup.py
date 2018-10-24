@@ -14,7 +14,7 @@ __author__ = 'Asdil'
 from distutils.core import setup
 
 setup(name='Asdil',
-version='1.0.2',
+version='1.0.2.1',
 py_modules=['Asdil'],
 )
 
