@@ -8,14 +8,14 @@
 -------------------------------------------------
    Change Activity:
                    2018/10/10:
-    version = 0.5
+    version = 1.0.2
 -------------------------------------------------
 """
 __author__ = 'Asdil'
 import os
 import shutil
 import subprocess
-
+import zipfile
 
 # 合并两个目录
 def pathJoin(path1, path2):
@@ -122,6 +122,10 @@ def createDir(path):
         return True
     return False
 
+# 删除目录
+def delDir(path):
+    shutil.rmtree(path)
+
 # 合并字典
 def combinDic(*args):
     ret = {}
@@ -138,18 +142,107 @@ def combinDic(*args):
     return ret
 
 
+# 拆分列表
+def splitList(_list, slice):
+    """
+    :param _list:  列表
+    :param slice:  拆分块的大小
+    :return:       拆分后的列表
+    """
+    return [_list[i:i + slice] for i in range(0, len(_list), slice)]
+
+# 压缩文件
+def zipFile(file_path, output = None, rename = None):
+    """
+    :param file_path:  文件绝对路径
+    :param output:     是否输入到其它文件夹
+    :return:           True, False
+    """
+    # 拆分成文件路径，文件
+    path, name, _, name_extension = splitPath(file_path)
+    if rename is None:
+        rename = name
+
+    if output is None:
+        output = path
+    azip = zipfile.ZipFile(pathJoin(output, rename + '.zip'), 'w')
+    # 写入zip
+    azip.write(file_path, name_extension, compress_type=zipfile.ZIP_DEFLATED)
+    azip.close()
+    print("{} -> {}".format(file_path, pathJoin(output, rename + '.zip')))
+
+# 解压文件
+def unzipFile(file_path):
+    """
+    :param file_path:  zip文件完整路径
+    :return:
+    """
+    _, _, _, name_extension = splitPath(file_path)
+    azip = zipfile.ZipFile(file_path)
+    azip.namelist()
+    azip.close()
+    print("{} ->> {}".format(file_path, file_path[:-4]))
+
+# 压缩文件夹
+def zipDir(file_dir, output=None, rename=None):
+    """
+    :param file_dir:  文件夹路径
+    :param output:    输出路径
+    :param rename:    重命名
+    :return:
+    """
+    if rename is None:
+        tmp = file_dir.strip('/')
+        dirs = tmp.strip('/').split('/')
+        rename = dirs[-1]
+    # 压缩文件夹
+    if output is None:
+        output = '/' + '/'.join(dirs[:-1])
+        print(pathJoin(output, rename))
+        shutil.make_archive(pathJoin(output, rename), 'zip', file_dir)
+    else:
+        shutil.make_archive(pathJoin(output, rename), 'zip', file_dir)
+    print("{} -> {}".format(file_dir, pathJoin(output, rename)+'.zip'))
+
+# 解压文件夹
+def unzipDir(file_dir, output=None, rename=None):
+    """
+    :param file_dir:  解压文件夹
+    :return:
+    """
+    path, name, _, _ = splitPath(file_dir)
+    if output is None:
+        output = path
+    if rename is None:
+        rename = name
+    output = pathJoin(output, rename)
+
+    shutil.unpack_archive(file_dir, output)
+    print('{} ->> {}'.format(file_dir, output))
+
+
+
 # 帮助文档
-def help():
+def hp():
     print("函数: pathJoin(path1, path2)合并文件")
     print("函数: subprocessPopen(cmd)执行shell命令")
     print("函数: subprocessCall(cmd)执行shell命令获取返回值")
     print("函数: splitPath(path)分离目录和文件")
     print("函数: copyFile(srcfile, dstfile)复制文件")
     print("函数: cutFile(srcfile,dstfile)剪切文件")
-
     print("函数: reWriteTxt(filePath, key, newstr) 修改文件")
     print("函数: interSet(l1, l2) list去交集")
     print("函数: diffSet(l1, l2)  list取差集")
     print("函数: unionSet(l1, l2) list取并集")
     print("函数: createDir(path)  创建文件夹")
+    print("函数: delDir(path)     删除文件夹")
     print("函数: combinDic(*args)  合并多个字典合 ([dict, dict]) 或者(dict, dict)")
+    print("函数: splitList(_list, slice)  列表按照每块slice大小拆分")
+    print("函数: zipFile(file_path, output, rename)  压缩文件(zip)")
+    print("函数: unzipFile(file_path)   解压文件(zip)")
+    print("函数: zipDir(file_dir, output, rename)  压缩文件夹(zip)")
+    print("函数: unzipDir(file_dir, output, rename) 解压文件夹(zip)")
+
+
+
+
