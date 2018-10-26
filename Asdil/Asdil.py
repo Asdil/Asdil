@@ -17,6 +17,15 @@ import shutil
 import subprocess
 import zipfile
 
+# 获取目标目录文件
+def getFiles(path, extension=None):
+    if extension is None:
+        l = -len(extension)
+        ret = [pathJoin(path, each) for each in os.listdir(path) if each[l:] == extension]
+    else:
+        ret = [pathJoin(path, each) for each in os.listdir(path)]
+    return ret
+
 # 合并两个目录
 def pathJoin(path1, path2):
     assert type(path1) is str
@@ -248,6 +257,7 @@ def hp():
     print("函数: unzipFile(file_path, output)   解压文件(zip)")
     print("函数: zipDir(file_dir, output, rename)  压缩文件夹(zip)")
     print("函数: unzipDir(file_dir, output, rename) 解压文件夹(zip)")
+    print("函数: getFiles(path, extension=None) 获取文件夹中的文件")
 
 
 
