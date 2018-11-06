@@ -12,6 +12,7 @@
 -------------------------------------------------
 """
 __author__ = 'Asdil'
+import re
 import paramiko
 
 #  定义一个类，表示一台远端linux主机
@@ -61,22 +62,37 @@ class Linux(object):
         self.chan.close()
         self.t.close()
 
-    def send(self, cmd):
+    # 执行命令
+    def send(self, cmd, type=0):
+        patten = re.compile(r'.*\r\n(.*)\r\n.*')
         cmd += '\r'
-        try:
-            self.chan.send(cmd)
-            ret = self.chan.recv(65535)
-            ret = ret.decode('utf-8')
-        except:
-            print('执行失败')
-            return 0
-        return ret
+        if type == 0:
+            try:
+                self.chan.send(cmd)
+                return True
+            except:
+                print('执行失败')
+                return False
+        else:
+            try:
+                self.chan.send(cmd)
+                ret = self.chan.recv(65535)
+                ret = ret.decode('utf-8')
+                ret = patten.findall(ret)
+                if ret:
+                    return ret[-1]
+                else:
+                    print('无返回值')
+                    return False
+            except:
+                print('执行失败')
+                return False
 
 def hp():
     print('类: Linux(pip, username, password)定义连接远程主机')
     print('函数: Linux.connect()连接主机 返回True or false')
     print('函数: Linux.close()关闭连接')
-    print('函数: Linux.send(cmd)执行命令')
+    print('函数: Linux.send(cmd， type)执行命令 type=0 无返回值')
 
 
 
