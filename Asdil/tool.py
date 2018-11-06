@@ -8,7 +8,7 @@
 -------------------------------------------------
    Change Activity:
                    2018/10/10:
-    version = 1.0.2.1
+    version = 1.7.0.6
 -------------------------------------------------
 """
 __author__ = 'Asdil'
@@ -19,7 +19,7 @@ import zipfile
 
 # 获取目标目录文件
 def getFiles(path, extension=None):
-    if extension is None:
+    if extension is not None:
         l = -len(extension)
         ret = [pathJoin(path, each) for each in os.listdir(path) if each[l:] == extension]
     else:
@@ -81,7 +81,7 @@ def cutFile(srcfile,dstfile):
         if not os.path.exists(fpath):
             os.makedirs(fpath)                 # 创建路径
         shutil.move(srcfile, dstfile)          # 复制文件
-        print("copy %s -> %s" % (srcfile, dstfile))
+        print("cut %s -> %s" % (srcfile, dstfile))
 
 
 # 修改Txt文件
@@ -161,7 +161,7 @@ def splitList(_list, slice):
     return [_list[i:i + slice] for i in range(0, len(_list), slice)]
 
 # 压缩文件
-def zipFile(file_path, output = None, rename = None):
+def zipFile(file_path, output = None, rename = None, type=3):
     """
     :param file_path:  文件绝对路径
     :param output:     是否输入到其它文件夹
@@ -176,7 +176,13 @@ def zipFile(file_path, output = None, rename = None):
         output = path
     azip = zipfile.ZipFile(pathJoin(output, rename + '.zip'), 'w')
     # 写入zip
-    azip.write(file_path, name_extension, compress_type=zipfile.ZIP_DEFLATED)
+    if type==1:
+        azip.write(file_path, name_extension, compress_type=zipfile.ZIP_LZMA)
+
+    elif type==2:
+        azip.write(file_path, name_extension, compress_type=zipfile.ZIP_BZIP2)
+    else:
+        azip.write(file_path, name_extension, compress_type=zipfile.ZIP_DEFLATED)
     azip.close()
     print("{} -> {}".format(file_path, pathJoin(output, rename + '.zip')))
 
@@ -253,7 +259,7 @@ def hp():
     print("函数: delDir(path)     删除文件夹")
     print("函数: combinDic(*args)  合并多个字典合 ([dict, dict]) 或者(dict, dict)")
     print("函数: splitList(_list, slice)  列表按照每块slice大小拆分")
-    print("函数: zipFile(file_path, output, rename)  压缩文件(zip)")
+    print("函数: zipFile(file_path, output, rename, type)  压缩文件(zip) type(1-3)数字越小压缩率越高")
     print("函数: unzipFile(file_path, output)   解压文件(zip)")
     print("函数: zipDir(file_dir, output, rename)  压缩文件夹(zip)")
     print("函数: unzipDir(file_dir, output, rename) 解压文件夹(zip)")

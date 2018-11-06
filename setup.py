@@ -9,14 +9,15 @@
 -------------------------------------------------
    Change Activity:
                    2018/10/26:
+    version = 1.7.0.6
 -------------------------------------------------
 """
 __author__ = 'Asdil'
 
-from setuptools import setup, find_packages
+from setuptools import setup
 
 setup(name='Asdil',
-      version='1.0.0.6',
+      version='1.7.0.6',
       description='Tool of Asdil',
       author='Asdil',
       author_email='jpl4job@126.com',
@@ -26,7 +27,7 @@ setup(name='Asdil',
       packages=['Asdil'],
       platforms=["all"],
       url='https://github.com/Asdil/Asdil',
-      install_requires=[],
+      install_requires=["paramiko"],
       classifiers=[
           "Environment :: Web Environment",
           "Intended Audience :: Developers",
@@ -40,3 +41,8 @@ setup(name='Asdil',
           "Programming Language :: Python :: 3.5",
           "Programming Language :: Python :: 3.6",
           "Programming Language :: Python :: 3.7",])
+
+#  python setup.py check
+#  python setup.py sdist
+#  python setup.py register -r pypi
+#  python setup.py sdist upload -r pypi
