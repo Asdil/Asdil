@@ -1,14 +1,15 @@
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """
 -------------------------------------------------
-   File Name：     ssh
+   File Name：     setup
    Description :
    Author :        Asdil
-   date：          2018/11/6
+   date：          2018/10/26
 -------------------------------------------------
    Change Activity:
-                   2018/11/6:
-    version = 1.7.0.6
+                   2018/10/26:
+    version = 1.7.1.1
 -------------------------------------------------
 """
 __author__ = 'Asdil'
