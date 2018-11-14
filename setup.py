@@ -17,7 +17,7 @@ __author__ = 'Asdil'
 from setuptools import setup
 
 setup(name='Asdil',
-      version='1.7.1.1',
+      version='1.7.1.2',
       description='Tool of Asdil',
       author='Asdil',
       author_email='jpl4job@126.com',
@@ -28,7 +28,8 @@ setup(name='Asdil',
       platforms=["all"],
       url='https://github.com/Asdil/Asdil',
       install_requires=["paramiko",
-                        "ConcurrentLogHandler"],
+                        "ConcurrentLogHandler",
+                        "mailthon"],
       classifiers=[
           "Environment :: Web Environment",
           "Intended Audience :: Developers",
