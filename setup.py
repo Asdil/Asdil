@@ -9,7 +9,7 @@
 -------------------------------------------------
    Change Activity:
                    2018/10/26:
-    version = 1.7.1.1
+    version = 1.7.1.3
 -------------------------------------------------
 """
 __author__ = 'Asdil'
@@ -17,7 +17,7 @@ __author__ = 'Asdil'
 from setuptools import setup
 
 setup(name='Asdil',
-      version='1.7.1.2',
+      version='1.7.1.3',
       description='Tool of Asdil',
       author='Asdil',
       author_email='jpl4job@126.com',
@@ -29,7 +29,8 @@ setup(name='Asdil',
       url='https://github.com/Asdil/Asdil',
       install_requires=["paramiko",
                         "ConcurrentLogHandler",
-                        "mailthon"],
+                        "mailthon",
+                        "scp"],
       classifiers=[
           "Environment :: Web Environment",
           "Intended Audience :: Developers",
