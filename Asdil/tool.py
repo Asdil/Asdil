@@ -71,11 +71,13 @@ def copyFile(srcfile, dstfile):
             fpath, fname = os.path.split(dstfile)  # 分离文件名和路径
         else:
             fpath = dstfile
-            fname = name
+
         if not os.path.exists(fpath):
             os.makedirs(fpath)  # 创建路径
-            shutil.copyfile(srcfile, dstfile)  # 复制文件
-            print("copy %s -> %s" % (srcfile, dstfile))
+
+        dstfile = pathJoin(fpath, name)
+        shutil.copyfile(srcfile, dstfile)  # 复制文件
+        print("copy %s -> %s" % (srcfile, dstfile))
 
 
 # 剪切文件
@@ -271,6 +273,7 @@ def hp():
     print("函数: zipDir(file_dir, output, rename)  压缩文件夹(zip)")
     print("函数: unzipDir(file_dir, output, rename) 解压文件夹(zip)")
     print("函数: getFiles(path, extension=None) 获取文件夹中的文件")
+
 
 
 
