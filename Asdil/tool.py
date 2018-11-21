@@ -61,15 +61,21 @@ def splitPath(path):
 
 # 复制文件
 def copyFile(srcfile, dstfile):
+
     if not os.path.isfile(srcfile):
         print("%s not exist!" % srcfile)
         assert os.path.isfile(srcfile) is True
     else:
-        fpath, fname = os.path.split(dstfile)    #分离文件名和路径
+        _, _, _, name = splitPath(srcfile)
+        if dstfile[-len(name):] == name:
+            fpath, fname = os.path.split(dstfile)  # 分离文件名和路径
+        else:
+            fpath = dstfile
+            fname = name
         if not os.path.exists(fpath):
-            os.makedirs(fpath)                 #创建路径
-        shutil.copyfile(srcfile, dstfile)      #复制文件
-        print("copy %s -> %s" % (srcfile, dstfile))
+            os.makedirs(fpath)  # 创建路径
+            shutil.copyfile(srcfile, dstfile)  # 复制文件
+            print("copy %s -> %s" % (srcfile, dstfile))
 
 
 # 剪切文件
