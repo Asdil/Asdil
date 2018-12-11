@@ -17,6 +17,7 @@ import os
 import shutil
 import subprocess
 import zipfile
+from progressbar import progressbar
 
 # 获取目标目录文件
 def getFiles(path, extension=None):
@@ -250,6 +251,20 @@ def unzipDir(file_dir, output=None, rename=None):
     shutil.unpack_archive(file_dir, output)
     print('{} ->> {}'.format(file_dir, output))
 
+# 进度条
+def bar(length):
+    """
+    :param length:  int or list or dict
+    :return:        processbar
+    """
+    if isinstance(length, int):
+        return progressbar(range(length), redirect_stdout=True)
+    elif isinstance(length, list):
+        return progressbar(range(len(length)), redirect_stdout=True)
+    elif isinstance(length, dict):
+        return progressbar(range(len(length.keys())), redirect_stdout=True)
+    else:
+        print('输入错误, 请输入int, list, dict')
 
 
 # 帮助文档
@@ -273,6 +288,7 @@ def hp():
     print("函数: zipDir(file_dir, output, rename)  压缩文件夹(zip)")
     print("函数: unzipDir(file_dir, output, rename) 解压文件夹(zip)")
     print("函数: getFiles(path, extension=None) 获取文件夹中的文件")
+    print("函数: bar(length) 返回进度条迭代器")
 
 
 

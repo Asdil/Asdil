@@ -9,7 +9,7 @@
 -------------------------------------------------
    Change Activity:
                    2018/10/26:
-    version = 1.7.1.1
+    version = 1.7.1.7
 -------------------------------------------------
 """
 __author__ = 'Asdil'
@@ -112,7 +112,7 @@ class Scp:
 
     def putFile(self, file_path, remote_path, iscut=False):
         logger = None
-        if log:
+        if self.log:
             logger = log.init_log(self.log_path)
 
         scp = SCPClient(self.ssh.get_transport())
@@ -139,7 +139,7 @@ class Scp:
 
     def putDir(self, file_path, remote_path, iscut=False):
         logger = None
-        if log:
+        if self.log:
             logger = log.init_log(self.log_path)
 
         scp = SCPClient(self.ssh.get_transport())
@@ -159,40 +159,26 @@ class Scp:
 
     def getFile(self, file_path, remote_path):
         logger = None
-        if log:
+        if self.log:
             logger = log.init_log(self.log_path)
-
         scp = SCPClient(self.ssh.get_transport())
-        if not os.path.exists(file_path):
-            print(f'{file_path} 文件不存在')
-            if self.log:
-                logger.info(f'{file_path} 文件不存在')
-
         _, _, _, file_name = tool.splitPath(file_path)
         _, _, _, remote_name = tool.splitPath(remote_path)
-
         # 可以只是文件夹路径
         if remote_name != file_name:
             remote_path = tool.pathJoin(remote_path, file_name)
-
         scp.get(file_path, remote_path)
         scp.close()
         print(f'{self.ip_name}{file_path} -----> {remote_path}')
         if self.log:
             logger.info(f'{self.ip_name}{file_path} -----> {remote_path}')
 
-    def putDir(self, file_path, remote_path):
+    def getDir(self, file_path, remote_path):
         logger = None
-        if log:
+        if self.log:
             logger = log.init_log(self.log_path)
-
         scp = SCPClient(self.ssh.get_transport())
-        if not os.path.exists(file_path):
-            print(f'{file_path} 文件夹不存在')
-            if self.log:
-                logger.info(f'{file_path} 文件夹不存在')
-
-        scp.get(file_path, recursive=True, remote_path=remote_path)
+        scp.get(file_path, remote_path, recursive=True)
         scp.close()
         print(f'{self.ip_name}{file_path} -----> {remote_path}')
         if self.log:
@@ -206,11 +192,10 @@ def hp():
 
     print('类: Scp(ip, name, pwd, port=22, log_path=None) 上传下载文件')
     print('函数: Scp.putFile(file_path, remote_path) 上传文件到主机')
-    print('函数: Scp.getFile(file_path, remote_path) 下载文件夹到主机')
+    print("scp.putFile('/tmp/bb/ee.txt', '/data7/imputeData/tmp')")
     print('函数: Scp.putDir(file_path, remote_path) 上传文件夹到主机')
-    print('函数: Scp.putFile(file_path, remote_path) 上传文件到主机')
-
-
-
-
-
+    print("scp.putDir('/tmp/bb', '/data7/imputeData/tmp')")
+    print('函数: Scp.getFile(file_path, remote_path) 下载文件夹到主机')
+    print("scp.getFile('/data7/imputeData/tmp/aa/1.txt', '/tmp')")
+    print('函数: Scp.getDir(file_path, remote_path) 下载文件到主机')
+    print("scp.getDir('/data7/imputeData/tmp/aa/', '/tmp')")
