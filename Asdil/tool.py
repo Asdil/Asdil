@@ -17,6 +17,7 @@ import os
 import shutil
 import subprocess
 import zipfile
+import gzip
 from progressbar import progressbar
 
 # 获取目标目录文件
@@ -250,6 +251,57 @@ def unzipDir(file_dir, output=None, rename=None):
 
     shutil.unpack_archive(file_dir, output)
     print('{} ->> {}'.format(file_dir, output))
+
+
+# gzip文件
+def gzipFile(file_path, output=None, rename=None, del_file=False):
+    """
+    :param file_path: 文件路径
+    :param output:    输出路径
+    :param rename:    重命名
+    :param del_file:  是否删除源文件
+    :return:
+    """
+    assert os.path.exists(file_path)
+    path, name, _, name_extension = splitPath(file_path)
+    if rename is None:
+        rename = name
+    if output is None:
+        output = path
+    rename += '.gz'
+    out_path = pathJoin(output, rename)
+    with open(file_path, 'rb') as f_in:
+        with gzip.open(out_path, 'wb') as f_out:
+            shutil.copyfileobj(f_in, f_out)
+    if del_file:
+        os.remove(file_path)
+    print('{} ->> {}'.format(file_path, out_path))
+
+# 解压gz文件
+def gunzipFile(file_path, output=None, rename=None, del_file=False):
+    """
+    :param file_path: 文件路径
+    :param output:    输出路径
+    :param rename:    重命名
+    :param del_file:  是否删除源文件
+    :return:
+    """
+    assert os.path.exists(file_path)
+    path, name, _, name_extension = splitPath(file_path)
+    if rename is None:
+        rename = name
+    if output is None:
+        output = path
+    if rename[-3:] == '.gz':
+        rename = rename[:-3]
+    out_path = pathJoin(output, rename)
+    with gzip.open(file_path, 'rb') as f_in:
+        data = f_in.read().decode('utf8')
+        with open(out_path, 'w') as f_out:
+            f_out.write(data)
+    if del_file:
+        os.remove(file_path)
+    print('{} ->> {}'.format(file_path, out_path))
 
 # 进度条
 def bar(length):
