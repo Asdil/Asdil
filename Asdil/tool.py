@@ -161,6 +161,26 @@ def combinDic(*args):
             ret = dict(ret, **_dict)
     return ret
 
+# 字典累加
+def add_dic(dica, dicb):
+    """
+    :param dica:   字典a
+    :param dicb:   字典b
+    :return:       字典累加
+    """
+    dic = {}
+    for key in dica:
+        if dicb.get(key):
+            dic[key] = dica[key] + dicb[key]
+        else:
+            dic[key] = dica[key]
+    for key in dicb:
+        if dica.get(key):
+            pass
+        else:
+            dic[key] = dicb[key]
+    return dic
+
 
 # 拆分列表
 def splitList(_list, slice):
@@ -341,6 +361,7 @@ def hp():
     print("函数: unzipDir(file_dir, output, rename) 解压文件夹(zip)")
     print("函数: getFiles(path, extension=None) 获取文件夹中的文件")
     print("函数: bar(length) 返回进度条迭代器")
+    print("函数: add_dic(dica, dicb) 字典数字累加")
 
 
 
