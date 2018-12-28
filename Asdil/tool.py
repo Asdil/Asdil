@@ -342,8 +342,6 @@ def bar(length):
 def until(y=None, m=None, d=None, H=None, M=None, S=None, logger=None):
     import time
     import datetime
-    if logger:
-        logger.info('直到')
     if y:
         y = int(y)
         m = int(m)
@@ -382,18 +380,22 @@ def until(y=None, m=None, d=None, H=None, M=None, S=None, logger=None):
             logger.info('到达预定时间开始运行程序')
     else:
         if d or H or M or S:
+            if H is None:
+                H = 0
+            if M is None:
+                M = 0
+            if S is None:
+                S = 0
             seconds = 0
             time_dic = {'day': 86400,
                         'hour': 3600,
                         'min': 60}
             if d:
-                assert H and M and S
                 seconds = (time_dic['day']*int(d) + time_dic['hour']*int(H) + time_dic['min']*int(M) + int(S))
                 print(f'将于{d}天{H}小时{M}分{S}秒 后运行')
                 if logger:
                     logger.info(f'将于{d}天{H}小时{M}分{S}秒 后运行')
             elif H:
-                assert M and S
                 seconds = (time_dic['hour'] * int(H) + time_dic['min'] * int(M) + int(S))
                 print(f'将于{H}小时{M}分{S}秒 后运行')
                 if logger:
