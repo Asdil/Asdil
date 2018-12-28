@@ -339,6 +339,91 @@ def bar(length):
         print('输入错误, 请输入int, list, dict')
 
 
+def until(y=None, m=None, d=None, H=None, M=None, S=None, logger=None):
+    import time
+    import datetime
+    if logger:
+        logger.info('直到')
+    if y:
+        y = int(y)
+        m = int(m)
+        d = int(d)
+        H = int(H)
+        M = int(M)
+        S = int(S)
+        try:
+            startTime = datetime.datetime(y, m, d, H, M, S)
+        except:
+            if logger:
+                logger.info('年月日时分秒输入错误')
+            print('年月日时分秒输入错误')
+            assert 1 == 2
+        if startTime < datetime.datetime.now():
+            logger.info('开始时间在当前时间之前')
+            print('开始时间在当前时间之前')
+            assert 2 == 3
+
+        second = (startTime - datetime.datetime.now()).seconds
+        minute = second // 60
+        second = second % 60
+        hour = minute // 60
+        minute = minute % 60
+        day = hour // 24
+        hour = hour % 24
+
+        print(f'将于{day}天{hour}小时{minute}分{second}秒 后运行')
+        if logger:
+            logger.info(f'将于{day}天{hour}小时{minute}分{second}秒 后运行')
+
+        while datetime.datetime.now() < startTime:
+            time.sleep(1)
+        print('到达预定时间开始运行程序')
+        if logger:
+            logger.info('到达预定时间开始运行程序')
+    else:
+        if d or H or M or S:
+            seconds = 0
+            time_dic = {'day': 86400,
+                        'hour': 3600,
+                        'min': 60}
+            if d:
+                assert H and M and S
+                seconds = (time_dic['day']*int(d) + time_dic['hour']*int(H) + time_dic['min']*int(M) + int(S))
+                print(f'将于{d}天{H}小时{M}分{S}秒 后运行')
+                if logger:
+                    logger.info(f'将于{d}天{H}小时{M}分{S}秒 后运行')
+            elif H:
+                assert M and S
+                seconds = (time_dic['hour'] * int(H) + time_dic['min'] * int(M) + int(S))
+                print(f'将于{H}小时{M}分{S}秒 后运行')
+                if logger:
+                    logger.info(f'将于{H}小时{M}分{S}秒 后运行')
+            elif M:
+                seconds = (time_dic['min'] * int(M) + int(S))
+                print(f'将于{M}分{S}秒 后运行')
+                if logger:
+                    logger.info(f'将于{M}分{S}秒 后运行')
+            else:
+                seconds = int(S)
+                print(f'将于{S}秒 后运行')
+                if logger:
+                    logger.info(f'将于{S}秒 后运行')
+            time.sleep(seconds)
+            print('到达预定时间开始运行程序')
+            if logger:
+                logger.info('到达预定时间开始运行程序')
+        else:
+            print('错误！ 定时任务没有指定时间')
+            if logger is not None:
+                logger.info('错误！ 定时任务没有指定时间')
+                assert 3 == 4
+
+
+
+
+
+
+
 # 帮助文档
 def hp():
     print("函数: pathJoin(path1, path2)合并文件")
@@ -362,6 +447,7 @@ def hp():
     print("函数: getFiles(path, extension=None) 获取文件夹中的文件")
     print("函数: bar(length) 返回进度条迭代器")
     print("函数: add_dic(dica, dicb) 字典数字累加")
+    print("函数 until(y, m, d, H, M, S, logger) 预定时间跑程序")
 
 
 
