@@ -21,10 +21,12 @@ import gzip
 from progressbar import progressbar
 
 # 获取目标目录文件
-def getFiles(path, extension=None):
+def getFiles(path, extension=None, key=None):
     if extension is not None:
         l = -len(extension)
         ret = [pathJoin(path, each) for each in os.listdir(path) if each[l:] == extension]
+    elif key is not None:
+        ret = [pathJoin(path, each) for each in os.listdir(path) if key in each]
     else:
         ret = [pathJoin(path, each) for each in os.listdir(path)]
     return ret
