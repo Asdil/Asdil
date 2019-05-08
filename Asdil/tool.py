@@ -422,10 +422,14 @@ def until(y=None, m=None, d=None, H=None, M=None, S=None, logger=None):
                 logger.info('错误！ 定时任务没有指定时间')
                 assert 3 == 4
 
-
-
-
-
+# 获取进程pid
+def get_process_id(name):
+    child = subprocess.Popen(["pgrep","-f",name],stdout=subprocess.PIPE,shell=False)
+    response = child.communicate()[0]
+    response = response.decode().strip().split('\n')
+    if len(response) == 1 and len(response[0]) == 0:
+        return []
+    return response
 
 
 # 帮助文档
@@ -452,6 +456,7 @@ def hp():
     print("函数: bar(length) 返回进度条迭代器")
     print("函数: add_dic(dica, dicb) 字典数字累加")
     print("函数 until(y, m, d, H, M, S, logger) 预定时间跑程序")
+    print("函数 get_process_id(name)获取进程pid返回[],没有进程返回[]列表")
 
 
 
