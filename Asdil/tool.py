@@ -31,6 +31,17 @@ def getFiles(path, extension=None, key=None):
         ret = [pathJoin(path, each) for each in os.listdir(path)]
     return ret
 
+# 获取文件名
+def getNames(path, extension=None, key=None):
+    if extension is not None:
+        l = -len(extension)
+        ret = [each for each in os.listdir(path) if each[l:] == extension]
+    elif key is not None:
+        ret = [each for each in os.listdir(path) if key in each]
+    else:
+        ret = [each for each in os.listdir(path)]
+    return ret
+
 # 合并两个目录
 def pathJoin(path1, path2):
     assert type(path1) is str
