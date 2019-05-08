@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="699735ad-8da8-4af2-ae39-7f4ea46d4f12" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Asdil/tool.py" beforeDir="false" afterPath="$PROJECT_DIR$/Asdil/tool.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Asdil/ssh.py" beforeDir="false" afterPath="$PROJECT_DIR$/Asdil/ssh.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/setup.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,12 +21,12 @@
     <session id="-1758249933">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="4" />
-          <entry key="project.open.time.0" value="5" />
+          <entry key="project.closed" value="5" />
+          <entry key="project.open.time.0" value="6" />
           <entry key="project.open.time.1" value="8" />
           <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="15" />
+          <entry key="project.opened" value="16" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -47,14 +49,14 @@
         <counts>
           <entry key="dd" value="62" />
           <entry key="dummy" value="5" />
-          <entry key="py" value="5178" />
+          <entry key="py" value="5191" />
           <entry key="pypirc" value="22" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="89" />
-          <entry key="Python" value="5178" />
+          <entry key="Python" value="5191" />
         </counts>
       </usages-collector>
     </session>
@@ -111,11 +113,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/setup.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="901">
-              <caret line="53" column="39" selection-start-line="53" selection-start-column="3" selection-end-line="53" selection-end-column="39" />
+            <state relative-caret-position="166">
+              <caret line="19" column="22" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -123,17 +125,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Asdil/ssh.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3281">
-              <caret line="200" column="60" selection-start-line="200" selection-start-column="60" selection-end-line="200" selection-end-column="60" />
+            <state relative-caret-position="-1186">
+              <caret line="101" column="75" selection-start-line="101" selection-start-column="75" selection-end-line="101" selection-end-column="75" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Asdil/tool.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="406">
-              <caret line="458" column="56" selection-start-line="458" selection-start-column="56" selection-end-line="458" selection-end-column="56" />
+            <state relative-caret-position="7395">
+              <caret line="435" column="9" selection-start-line="435" selection-start-column="9" selection-end-line="435" selection-end-column="9" />
               <folding>
                 <element signature="e#393#402#0" expanded="true" />
               </folding>
@@ -144,7 +146,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Asdil/code.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1462">
+            <state relative-caret-position="1496">
               <caret line="88" column="17" selection-start-line="88" selection-start-column="17" selection-end-line="88" selection-end-column="17" />
               <folding>
                 <element signature="e#349#359#0" expanded="true" />
@@ -186,10 +188,10 @@
         <option value="$PROJECT_DIR$/Asdil/log.py" />
         <option value="$PROJECT_DIR$/Asdil/email.py" />
         <option value="$PROJECT_DIR$/Asdil/mail.py" />
-        <option value="$PROJECT_DIR$/Asdil/ssh.py" />
         <option value="$PROJECT_DIR$/Asdil/code.py" />
-        <option value="$PROJECT_DIR$/setup.py" />
         <option value="$PROJECT_DIR$/Asdil/tool.py" />
+        <option value="$PROJECT_DIR$/Asdil/ssh.py" />
+        <option value="$PROJECT_DIR$/setup.py" />
       </list>
     </option>
   </component>
@@ -200,7 +202,7 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="292" />
+    <option name="x" value="180" />
     <option name="y" value="144" />
     <option name="width" value="1740" />
     <option name="height" value="854" />
@@ -353,10 +355,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="348" y="153" width="1740" height="854" extended-state="0" />
+    <frame x="180" y="144" width="1740" height="854" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18315665" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18492344" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -424,23 +426,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/setup.py">
+    <entry file="file://$PROJECT_DIR$/Asdil/tool.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="901">
-          <caret line="53" column="39" selection-start-line="53" selection-start-column="3" selection-end-line="53" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Asdil/ssh.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3281">
-          <caret line="200" column="60" selection-start-line="200" selection-start-column="60" selection-end-line="200" selection-end-column="60" />
+        <state relative-caret-position="7395">
+          <caret line="435" column="9" selection-start-line="435" selection-start-column="9" selection-end-line="435" selection-end-column="9" />
+          <folding>
+            <element signature="e#393#402#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Asdil/code.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1462">
+        <state relative-caret-position="1496">
           <caret line="88" column="17" selection-start-line="88" selection-start-column="17" selection-end-line="88" selection-end-column="17" />
           <folding>
             <element signature="e#349#359#0" expanded="true" />
@@ -448,13 +446,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Asdil/tool.py">
+    <entry file="file://$PROJECT_DIR$/Asdil/ssh.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="406">
-          <caret line="458" column="56" selection-start-line="458" selection-start-column="56" selection-end-line="458" selection-end-column="56" />
-          <folding>
-            <element signature="e#393#402#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="-1186">
+          <caret line="101" column="75" selection-start-line="101" selection-start-column="75" selection-end-line="101" selection-end-column="75" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/setup.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="166">
+          <caret line="19" column="22" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
         </state>
       </provider>
     </entry>

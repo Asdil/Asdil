@@ -99,6 +99,7 @@ class Scp:
     def __init__(self, ip, name, pwd, port=22, log_path=None):
         self.ssh = SSHClient()
         self.ssh.load_system_host_keys()
+        self.ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy()) # 修复
         self.ssh.connect(ip,
                     port=port,
                     username=name,
