@@ -96,7 +96,7 @@ def copyFile(srcfile, dstfile):
 
 
 # 剪切文件
-def cutFile(srcfile,dstfile):
+def cutFile(srcfile, dstfile):
     if not os.path.isfile(srcfile):
         print("%s not exist!" % srcfile)
         assert os.path.isfile(srcfile) is True
