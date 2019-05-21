@@ -8,8 +8,8 @@
    date：          2018/10/26
 -------------------------------------------------
    Change Activity:
-                   2018/10/26:
-    version = 1.7.1.1
+                   2019/5/21:
+    version = 1.7.2.9
 -------------------------------------------------
 """
 __author__ = 'Asdil'
@@ -54,13 +54,15 @@ def pathJoin(path1, path2):
 
 
 # 执行命令行命令
-def subprocessCall(cmd):
+def subprocessCheckAll(cmd):
     subprocess.check_call(cmd, shell=True)
 
+def subprocessCall(cmd):
+    subprocess.call(cmd, shell=True)
 
 # 执行命令获取返回值
 def subprocessPopen(cmd):
-    subprocessCall(cmd)  # 报错用
+    #subprocessCall(cmd)  # 报错用
     p = subprocess.Popen(cmd, shell=True, stdout=subprocess.PIPE)
     out, err = p.communicate()
     return [each for each in out.decode('utf8').splitlines()]
