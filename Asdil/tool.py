@@ -18,7 +18,8 @@ import shutil
 import subprocess
 import zipfile
 import gzip
-from progressbar import progressbar
+#from progressbar import progressbar
+import tqdm
 
 # 获取目标目录文件
 def getFiles(path, extension=None, key=None):
@@ -339,20 +340,27 @@ def gunzipFile(file_path, output=None, rename=None, del_file=False):
     print('{} ->> {}'.format(file_path, out_path))
 
 # 进度条
-def bar(length):
+#def bar(length):
     """
     :param length:  int or list or dict
     :return:        processbar
     """
-    if isinstance(length, int):
-        return progressbar(range(length), redirect_stdout=True)
-    elif isinstance(length, list):
-        return progressbar(range(len(length)), redirect_stdout=True)
-    elif isinstance(length, dict):
-        return progressbar(range(len(length.keys())), redirect_stdout=True)
+#    if isinstance(length, int):
+#        return progressbar(range(length), redirect_stdout=True)
+#    elif isinstance(length, list):
+#        return progressbar(range(len(length)), redirect_stdout=True)
+#    elif isinstance(length, dict):
+#        return progressbar(range(len(length.keys())), redirect_stdout=True)
+#    else:
+#        print('输入错误, 请输入int, list, dict')
+# 进度条
+def bar(data):
+    if isinstance(data, int):
+        return tqdm(range(data))
+    elif isinstance(data, list) or isinstance(data, dict):
+        return tqdm(data)
     else:
         print('输入错误, 请输入int, list, dict')
-
 
 def until(y=None, m=None, d=None, H=None, M=None, S=None, logger=None):
     import time

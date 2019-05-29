@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="699735ad-8da8-4af2-ae39-7f4ea46d4f12" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Asdil/fo.py" beforeDir="false" afterPath="$PROJECT_DIR$/Asdil/fo.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Asdil/tool.py" beforeDir="false" afterPath="$PROJECT_DIR$/Asdil/tool.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/setup.py" afterDir="false" />
     </list>
@@ -22,12 +21,12 @@
     <session id="-1758249933">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="8" />
+          <entry key="project.closed" value="9" />
           <entry key="project.open.time.0" value="8" />
-          <entry key="project.open.time.1" value="9" />
-          <entry key="project.open.time.2" value="1" />
+          <entry key="project.open.time.1" value="10" />
+          <entry key="project.open.time.2" value="2" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="19" />
+          <entry key="project.opened" value="21" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -117,8 +116,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/setup.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="312">
-              <caret line="51" column="24" lean-forward="true" selection-start-line="51" selection-start-column="24" selection-end-line="51" selection-end-column="24" />
+            <state relative-caret-position="334">
+              <caret line="33" column="29" selection-start-line="33" selection-start-column="29" selection-end-line="33" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -135,11 +134,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Asdil/tool.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="155">
-              <caret line="77" column="4" selection-start-line="77" selection-start-column="4" selection-end-line="77" selection-end-column="4" />
+            <state relative-caret-position="356">
+              <caret line="21" column="11" selection-start-line="21" selection-start-column="7" selection-end-line="21" selection-end-column="11" />
               <folding>
-                <element signature="e#393#402#0" expanded="true" />
-                <marker date="1557366806000" expanded="true" signature="957:1258" ph="..." />
+                <element signature="e#392#401#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -169,7 +167,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Asdil/code.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1496">
+            <state relative-caret-position="1462">
               <caret line="88" column="17" selection-start-line="88" selection-start-column="17" selection-end-line="88" selection-end-column="17" />
               <folding>
                 <element signature="e#349#359#0" expanded="true" />
@@ -181,16 +179,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Asdil/fo.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-114">
+            <state relative-caret-position="255">
               <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
               <folding>
                 <element signature="e#349#358#0" expanded="true" />
-                <element signature="e#588#681#0" />
-                <element signature="e#714#811#0" />
-                <marker date="1557369346000" expanded="false" signature="423:424" ph="..." />
-                <marker date="1557369346000" expanded="false" signature="483:488" ph="..." />
-                <marker date="1557369346000" expanded="false" signature="546:551" ph="..." />
-                <marker date="1557369346000" expanded="true" signature="1202:4128" ph="..." />
               </folding>
             </state>
           </provider>
@@ -231,8 +223,8 @@
         <option value="$PROJECT_DIR$/Asdil/mail.py" />
         <option value="$PROJECT_DIR$/Asdil/code.py" />
         <option value="$PROJECT_DIR$/Asdil/ssh.py" />
-        <option value="$PROJECT_DIR$/Asdil/tool.py" />
         <option value="$PROJECT_DIR$/Asdil/fo.py" />
+        <option value="$PROJECT_DIR$/Asdil/tool.py" />
         <option value="$PROJECT_DIR$/setup.py" />
       </list>
     </option>
@@ -244,8 +236,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="180" />
-    <option name="y" value="153" />
+    <option name="x" value="244" />
+    <option name="y" value="75" />
     <option name="width" value="1740" />
     <option name="height" value="854" />
   </component>
@@ -254,6 +246,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -274,7 +267,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -397,10 +389,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="180" y="153" width="1740" height="854" extended-state="0" />
+    <frame x="244" y="75" width="1740" height="854" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1902238" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1943463" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -490,7 +482,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Asdil/code.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1496">
+        <state relative-caret-position="1462">
           <caret line="88" column="17" selection-start-line="88" selection-start-column="17" selection-end-line="88" selection-end-column="17" />
           <folding>
             <element signature="e#349#359#0" expanded="true" />
@@ -498,37 +490,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Asdil/tool.py">
+    <entry file="file://$PROJECT_DIR$/Asdil/fo.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
-          <caret line="77" column="4" selection-start-line="77" selection-start-column="4" selection-end-line="77" selection-end-column="4" />
+        <state relative-caret-position="255">
+          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
           <folding>
-            <element signature="e#393#402#0" expanded="true" />
-            <marker date="1557366806000" expanded="true" signature="957:1258" ph="..." />
+            <element signature="e#349#358#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Asdil/fo.py">
+    <entry file="file://$PROJECT_DIR$/Asdil/tool.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-114">
-          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+        <state relative-caret-position="356">
+          <caret line="21" column="11" selection-start-line="21" selection-start-column="7" selection-end-line="21" selection-end-column="11" />
           <folding>
-            <element signature="e#349#358#0" expanded="true" />
-            <element signature="e#588#681#0" />
-            <element signature="e#714#811#0" />
-            <marker date="1557369346000" expanded="false" signature="423:424" ph="..." />
-            <marker date="1557369346000" expanded="false" signature="483:488" ph="..." />
-            <marker date="1557369346000" expanded="false" signature="546:551" ph="..." />
-            <marker date="1557369346000" expanded="true" signature="1202:4128" ph="..." />
+            <element signature="e#392#401#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/setup.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="51" column="24" lean-forward="true" selection-start-line="51" selection-start-column="24" selection-end-line="51" selection-end-column="24" />
+        <state relative-caret-position="334">
+          <caret line="33" column="29" selection-start-line="33" selection-start-column="29" selection-end-line="33" selection-end-column="29" />
         </state>
       </provider>
     </entry>

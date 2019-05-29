@@ -9,7 +9,7 @@
 -------------------------------------------------
    Change Activity:
                    2019/5/8:
-    version = 1.7.2.8
+    version = 1.7.3.0
 -------------------------------------------------
 """
 __author__ = 'Asdil'
@@ -17,7 +17,7 @@ __author__ = 'Asdil'
 from setuptools import setup
 
 setup(name='Asdil',
-      version='1.7.2.9',
+      version='1.7.3.0',
       description='Tool of Asdil',
       author='Asdil',
       author_email='jpl4job@126.com',
@@ -31,7 +31,7 @@ setup(name='Asdil',
                         "ConcurrentLogHandler",
                         "mailthon",
                         "scp",
-                        "progressbar2",
+                        "tqdm",
                         "rsa",
                         "Crypto"],
       classifiers=[
