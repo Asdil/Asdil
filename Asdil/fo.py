@@ -149,11 +149,3 @@ def cutAllFiles(srcfile, dstfile, key=None, isreplace=False):
                 _,_,_,name = tool.splitPath(_file)
                 shutil.move(_file, dstfile+f'/{name}')
                 print(f'cut {_file} -> dstfile/{name}')
-
-
-
-
-
-
-
-

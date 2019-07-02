@@ -65,6 +65,3 @@ def init_log(log_path):
     logging.config.fileConfig(log_ini_path)
     log = logging.getLogger()
     return log
-
-
-

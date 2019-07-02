@@ -9,7 +9,7 @@
 -------------------------------------------------
    Change Activity:
                    2019/5/8:
-    version = 1.7.3.0
+    version = 1.7.3.2
 -------------------------------------------------
 """
 __author__ = 'Asdil'
@@ -17,7 +17,7 @@ __author__ = 'Asdil'
 from setuptools import setup
 
 setup(name='Asdil',
-      version='1.7.3.0',
+      version='1.7.3.2',
       description='Tool of Asdil',
       author='Asdil',
       author_email='jpl4job@126.com',
@@ -33,7 +33,8 @@ setup(name='Asdil',
                         "scp",
                         "tqdm",
                         "rsa",
-                        "Crypto"],
+                        "Crypto",
+                        "psutil"],
       classifiers=[
           "Environment :: Web Environment",
           "Intended Audience :: Developers",
@@ -46,7 +47,7 @@ setup(name='Asdil',
           "Programming Language :: Python :: 3",
           "Programming Language :: Python :: 3.5",
           "Programming Language :: Python :: 3.6",
-          "Programming Language :: Python :: 3.7",])
+          "Programming Language :: Python :: 3.7", ])
 
 #  python setup.py check
 #  python setup.py sdist

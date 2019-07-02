@@ -90,6 +90,3 @@ def hp():
     print('as_obj = Code2(密码)')
     print('e = pc.encode(txt)')
     print('pc.decode(e)')
-
-
-

@@ -19,7 +19,9 @@ import subprocess
 import zipfile
 import gzip
 #from progressbar import progressbar
-import tqdm
+from tqdm import tqdm
+import psutil
+import time
 
 # 获取目标目录文件
 def getFiles(path, extension=None, key=None):
@@ -443,14 +445,40 @@ def until(y=None, m=None, d=None, H=None, M=None, S=None, logger=None):
                 logger.info('错误！ 定时任务没有指定时间')
                 assert 3 == 4
 
+
 # 获取进程pid
 def get_process_id(name):
-    child = subprocess.Popen(["pgrep","-f",name],stdout=subprocess.PIPE,shell=False)
+    child = subprocess.Popen(["pgrep", "-f", name], stdout=subprocess.PIPE, shell=False)
     response = child.communicate()[0]
     response = response.decode().strip().split('\n')
     if len(response) == 1 and len(response[0]) == 0:
         return []
     return response
+
+
+# cpu使用率
+def monitor_memery_cpu(pids, second=10, out_path=None, show=False):
+    proc = psutil.Process(int(pids))
+    info = ['cpu rate\tmemory use']
+    while True:
+        try:
+            cpu = psutil.cpu_percent()
+            memory = proc.memory_info().rss / 1024 / 1024
+        except:
+            break
+        if show:
+            print(f'cpu 使用率: {cpu}%  memory 使用量 {round(memory, 2)}MB')
+        info.append(f'{cpu}\tmemory')
+        time.sleep(second)
+    if out_path is not None:
+        with open(out_path, 'w') as f:
+            f.write('\n'.join(info))
+
+
+
+
+
+
 
 
 # 帮助文档
@@ -478,8 +506,4 @@ def hp():
     print("函数: add_dic(dica, dicb) 字典数字累加")
     print("函数 until(y, m, d, H, M, S, logger) 预定时间跑程序")
     print("函数 get_process_id(name)获取进程pid返回[],没有进程返回[]列表")
-
-
-
-
-
+    print("函数monitor_memery_cpu(pids, second=10, out_path=None, show=False) 打印或者写入进程cpu内存使用情况")
