@@ -468,7 +468,7 @@ def monitor_memery_cpu(pids, second=10, out_path=None, show=False):
             break
         if show:
             print(f'cpu 使用率: {cpu}%  memory 使用量 {round(memory, 2)}MB')
-        info.append(f'{cpu}\tmemory')
+        info.append(f'{cpu}\t{memory}')
         time.sleep(second)
     if out_path is not None:
         with open(out_path, 'w') as f:
