@@ -475,6 +475,12 @@ def monitor_memery_cpu(pids, second=10, out_path=None, show=False):
             f.write('\n'.join(info))
 
 
+# 读取数据
+def read(path, sep='\n'):
+    with open(path, 'r') as f:
+        return f.read().strip().split(sep)
+
+
 
 
 
@@ -507,3 +513,4 @@ def hp():
     print("函数 until(y, m, d, H, M, S, logger) 预定时间跑程序")
     print("函数 get_process_id(name)获取进程pid返回[],没有进程返回[]列表")
     print("函数monitor_memery_cpu(pids, second=10, out_path=None, show=False) 打印或者写入进程cpu内存使用情况")
+    print("函数read(path, sep='\n') 读取数据")
