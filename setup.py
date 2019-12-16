@@ -8,8 +8,8 @@
    date：          2018/10/26
 -------------------------------------------------
    Change Activity:
-                   2019/5/8:
-    version = 1.7.3.2
+                   2019/12/16:
+    version = 1.7.3.6
 -------------------------------------------------
 """
 __author__ = 'Asdil'
@@ -17,7 +17,7 @@ __author__ = 'Asdil'
 from setuptools import setup
 
 setup(name='Asdil',
-      version='1.7.3.5',
+      version='1.7.3.6',
       description='Tool of Asdil',
       author='Asdil',
       author_email='jpl4job@126.com',

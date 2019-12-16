@@ -361,6 +361,8 @@ def bar(data):
         return tqdm(range(data))
     elif isinstance(data, list) or isinstance(data, dict):
         return tqdm(data)
+    elif isinstance(data, iter):
+        return tqdm(list(data))
     else:
         print('输入错误, 请输入int, list, dict')
 
@@ -479,8 +481,29 @@ def monitor_memery_cpu(pids, second=10, out_path=None, show=False):
 def read(path, sep='\n'):
     with open(path, 'r') as f:
         return f.read().strip().split(sep)
-
-
+    
+# 合并列表，返回公共列表
+def mergeCommelementList(lsts):
+    '''
+    把公共元素的列表合并，返回合并后的结果list
+    '''
+    sets = [set(lst) for lst in lsts if lst]
+    merged = 1
+    while merged:
+        merged = 0
+        results = []
+        while sets:
+            common, rest = sets[0], sets[1:]
+            sets = []
+            for x in rest:
+                if x.isdisjoint(common):
+                    sets.append(x)
+                else:
+                    merged = 1
+                    common |= x
+            results.append(common)
+        sets = results
+    return sets
 
 
 
@@ -514,3 +537,4 @@ def hp():
     print("函数 get_process_id(name)获取进程pid返回[],没有进程返回[]列表")
     print("函数monitor_memery_cpu(pids, second=10, out_path=None, show=False) 打印或者写入进程cpu内存使用情况")
     print("函数read(path, sep='\n') 读取数据")
+    print("函数mergeCommelementList合并有相同元素的列表")
