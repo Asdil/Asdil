@@ -1,6 +1,6 @@
 [tool.poetry]
-name = "Asdil"
-version = "1.7.4.1"
+name = "asdil"
+version = "1.7.4.2"
 description = "Asdil's personal tool package"
 authors = ["Asdil Fibrizo <jpl4job@126.com>"]
 license = "MIT"
@@ -8,7 +8,7 @@ readme = "README.md"
 homepage = "https://github.com/Asdil/Asdil"
 repository = "https://github.com/Asdil/Asdil"
 classifiers=[
-    "Environment :: Web Environment",
+    "Environment :: Console",
     "Intended Audience :: Developers",
     "Operating System :: OS Independent",
     "Topic :: Text Processing :: Indexing",
@@ -20,9 +20,11 @@ classifiers=[
     "Programming Language :: Python :: 3.5",
     "Programming Language :: Python :: 3.6",
     "Programming Language :: Python :: 3.7", ]
-
+include = [
+    "LICENSE",
+]
 [tool.poetry.dependencies]
-python = "^3.5"
+python = "^3.7"
 paramiko = "^2.6"
 ConcurrentLogHandler = "^0.9"
 mailthon = "^0.1"
@@ -35,6 +37,10 @@ pymysql-pooling = "^1.0"
 pymysql = "^0.9"
 
 [tool.poetry.dev-dependencies]
+pytest = "^3.0"
+
+[tool.poetry.scripts]
+asdil = 'asdil:main'
 
 [build-system]
 requires = ["poetry>=0.12"]
